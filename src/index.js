@@ -3,21 +3,13 @@ const {make} = require('./util');
 
 import Icon from './assets/icon.svg';
 
-/**
- * This Block Tunes allows user to select some of predefined text variant.
- *
- * @see TextVariant enum for the details.
- * @uses Block Tunes API  {@link https://editorjs.io/block-tunes-api}
- */
 export default class CompanyFilteredTune {
     /**
-     * Tune constructor. Called on Block creation
      *
-     * @param {object} options - constructor params
-     * @param {API} api - editor.js Core API
-     * @param {BlockAPI} block - editor.js Block API
-     * @param {boolean} data - previously saved data
-     * @param {Object} config - configuration supported by Tune
+     * @param api
+     * @param data
+     * @param config
+     * @param block
      */
     constructor({ api, data, config, block }) {
         this.api = api;
@@ -34,7 +26,6 @@ export default class CompanyFilteredTune {
     }
 
     /**
-     * Tell editor.js that this Tool is a Block Tune
      *
      * @returns {boolean}
      */
@@ -43,7 +34,9 @@ export default class CompanyFilteredTune {
     }
 
     /**
-     * CSS selectors used in Tune
+     *
+     * @returns {{applied: string, wrapper: string}}
+     * @constructor
      */
     static get CSS() {
         return {
@@ -53,9 +46,8 @@ export default class CompanyFilteredTune {
     }
 
     /**
-     * Create Tunes controls wrapper that will be appended to the Block Tunes panel
      *
-     * @returns {Element}
+     * @returns {*}
      */
     render() {
         const wrapper = make('div', '');
@@ -92,10 +84,8 @@ export default class CompanyFilteredTune {
     }
 
     /**
-     * Handler for Tune controls click
      *
-     * @param {MouseEvent} event - click
-     * @returns {void}
+     * @param event
      */
     tuneClicked(event) {
         this.data = !this.data;
@@ -104,10 +94,9 @@ export default class CompanyFilteredTune {
     }
 
     /**
-     * Wraps Block Content to the Tunes wrapper
      *
-     * @param {Element} blockContent - editor.js block inner container
-     * @returns {Element} - created wrapper
+     * @param blockContent
+     * @returns {*}
      */
     wrap(blockContent) {
         this.wrapper = make('div', CompanyFilteredTune.CSS.wrapper);
@@ -120,7 +109,6 @@ export default class CompanyFilteredTune {
     }
 
     /**
-     * Returns Tune state
      *
      * @returns {boolean}
      */
