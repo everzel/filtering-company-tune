@@ -27,7 +27,7 @@ export default class CompanyFilteredTune {
 
         this.settings = Object.assign({}, config, {
             icon: Icon,
-            title: this.api.i18n.t('View company filter'),
+            title: this.api.i18n.t('Company Filtered') ?? 'Company Filtered',
         })
 
         // this.wrapper = undefined;
@@ -69,8 +69,6 @@ export default class CompanyFilteredTune {
         const toggler = make('div', classes, {
             innerHTML: this.settings.icon,
         });
-
-        console.log(toggler);
 
         toggler.dataset.name = 'company-filtered';
 
