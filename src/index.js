@@ -70,7 +70,9 @@ export default class CompanyFilteredTune {
             innerHTML: this.settings.icon,
         });
 
-        toggler.dataset.name = 'company_filtered';
+        console.log(toggler);
+
+        toggler.dataset.name = 'company-filtered';
 
         this.api.tooltip.onHover(toggler, this.settings.title, {
             placement: 'top',
