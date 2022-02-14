@@ -38,7 +38,7 @@ module.exports = {
     path: __dirname + '/dist',
     publicPath: '/',
     filename: 'bundle.js',
-    library: 'StretchTune',
+    library: 'CompanyFilteredTune',
     libraryTarget: 'umd'
   }
 };

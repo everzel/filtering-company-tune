@@ -1,5 +1,5 @@
 {
-  "name": "@scalemeup/editorjs-stretch-tune",
+  "name": "@everzel/filtering-company-tune",
   "version": "1.0.2",
   "main": "./dist/bundle.js",
   "license": "MIT",
@@ -13,7 +13,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/ScaleMeUp/editorjs-stretch-tune.git"
+    "url": "https://github.com/everzel/filtering-company-tune.git"
   },
   "scripts": {
     "build": "webpack --mode production",
@@ -33,6 +33,6 @@
     "example": "example"
   },
   "dependencies": {},
-  "author": "Maxim Razenkov <maxim.razenkov@scalemeup.com>",
+  "author": "Vladislav Zelenyk <vladislav.zelenyk@scalemeup.com>",
   "description": "Block Stretched Tune Tool for Editor.js"
 }

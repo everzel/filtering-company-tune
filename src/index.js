@@ -1,7 +1,7 @@
 require('./index.css').toString();
 const {make} = require('./util');
 
-import IconStretched from './assets/stretched.svg';
+import Icon from './assets/icon.svg';
 
 /**
  * This Block Tunes allows user to select some of predefined text variant.
@@ -9,7 +9,7 @@ import IconStretched from './assets/stretched.svg';
  * @see TextVariant enum for the details.
  * @uses Block Tunes API  {@link https://editorjs.io/block-tunes-api}
  */
-export default class StretchTune {
+export default class CompanyFilteredTune {
     /**
      * Tune constructor. Called on Block creation
      *
@@ -26,8 +26,8 @@ export default class StretchTune {
         this.block = block;
 
         this.settings = Object.assign({}, config, {
-            icon: IconStretched,
-            title: this.api.i18n.t('Stretched'),
+            icon: Icon,
+            title: this.api.i18n.t('View company filter'),
         })
 
         // this.wrapper = undefined;
@@ -47,8 +47,8 @@ export default class StretchTune {
      */
     static get CSS() {
         return {
-            wrapper: 'cdx-stretch-tune--wrapper',
-            applied: 'cdx-stretch-tune--applied',
+            wrapper: 'cdx-company-filtered-tune--wrapper',
+            applied: 'cdx-company-filtered-tune--applied',
         };
     }
 
@@ -70,7 +70,7 @@ export default class StretchTune {
             innerHTML: this.settings.icon,
         });
 
-        toggler.dataset.name = 'stretched';
+        toggler.dataset.name = 'company_filtered';
 
         this.api.tooltip.onHover(toggler, this.settings.title, {
             placement: 'top',
@@ -100,7 +100,7 @@ export default class StretchTune {
     tuneClicked(event) {
         this.data = !this.data;
 
-        this.wrapper.classList.toggle(StretchTune.CSS.applied, this.data);
+        this.wrapper.classList.toggle(CompanyFilteredTune.CSS.applied, this.data);
     }
 
     /**
@@ -110,9 +110,9 @@ export default class StretchTune {
      * @returns {Element} - created wrapper
      */
     wrap(blockContent) {
-        this.wrapper = make('div', StretchTune.CSS.wrapper);
+        this.wrapper = make('div', CompanyFilteredTune.CSS.wrapper);
 
-        this.wrapper.classList.toggle(StretchTune.CSS.applied, !!this.data);
+        this.wrapper.classList.toggle(CompanyFilteredTune.CSS.applied, !!this.data);
 
         this.wrapper.appendChild(blockContent);
 
